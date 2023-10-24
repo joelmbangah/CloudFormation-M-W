@@ -3,7 +3,7 @@ Description: 'CloudFormation Template for creating a prod VPC with three subnets
 
 Resources:
 
-  MyProdVPC:
+  ProdVPC:
     Type: 'AWS::EC2::VPC'
     Properties:
       CidrBlock: '10.0.0.0/16'
@@ -11,40 +11,40 @@ Resources:
       EnableDnsHostnames: 'true'
       Tags:
         - Key: 'Name'
-          Value: 'MyProdVPC'
+          Value: 'ProdVPC'
 
-  WebServerSubnet:
+  ProdWebServerSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: 'MyProdVPC'
+        Ref: 'ProdVPC'
       CidrBlock: '10.0.1.0/24'
       MapPublicIpOnLaunch: 'true'
       AvailabilityZone: !Select [ 0, !GetAZs '' ]
       Tags:
         - Key: 'Name'
-          Value: 'WebServerSubnet'
+          Value: 'ProdWebServerSubnet'
 
-  AppServerSubnet:
+  ProdAppServerSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: 'MyProdVPC'
+        Ref: 'ProdVPC'
       CidrBlock: '10.0.2.0/24'
       MapPublicIpOnLaunch: 'true'
       AvailabilityZone: !Select [ 1, !GetAZs '' ]
       Tags:
         - Key: 'Name'
-          Value: 'AppServerSubnet'
+          Value: 'ProdAppServerSubnet'
 
-  DataBaseSubnet:
+  ProdDataBaseSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId:
-        Ref: 'MyProdVPC'
+        Ref: 'ProdVPC'
       CidrBlock: '10.0.3.0/24'
       MapPublicIpOnLaunch: 'true'
       AvailabilityZone: !Select [ 2, !GetAZs '' ]
       Tags:
         - Key: 'Name'
-          Value: 'DataBaseSubnet'
+          Value: 'ProdDataBaseSubnet'
