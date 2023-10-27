@@ -6,8 +6,7 @@ Parameters:
   # Dev VPC Parameters
   DevVPCCidrBlockPara:
     Description: Please provide your Dev VPC cidr block
-    Type: String
-    Default: 10.0.0.0/16
+    Type: AWS::SSM::Parameter::Value<String>
 
   DevVPCEnableDnsSupportPara:
     Description: Please enable Dns support (true/false)
@@ -20,7 +19,7 @@ Parameters:
 
   DevWebServerSubnetCidrBlockPara:
     Description: Please provide the cidr block of your Dev Web server subnet 
-    Type: String
+    Type: AWS::SSM::Parameter::Value<String>
   
   # App server subnet parameters
   DevAppServerSubnetAZPara:
@@ -29,8 +28,8 @@ Parameters:
 
   DevAppServerSubnetCidrBlockPara:
     Description: Please provide the cidr block of your Dev App server subnet 
-    Type: String
-  
+    Type: AWS::SSM::Parameter::Value<String>
+
   # DB server subnet parameters
   DevDBServerSubnetAZPara:
     Description: Pease select an AZ for the Dev DB Server subnet
@@ -38,7 +37,7 @@ Parameters:
 
   DevDBServerSubnetCidrBlockPara:
     Description: Please provide the cidr block of your Dev DB server subnet 
-    Type: String
+    Type: AWS::SSM::Parameter::Value<String>
   
 Mappings: {}
 
