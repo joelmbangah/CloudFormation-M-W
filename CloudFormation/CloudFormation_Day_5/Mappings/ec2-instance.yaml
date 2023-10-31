@@ -2,9 +2,9 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: "Ec2 instance automation for dev environment"
 Metadata: {}
 
-Parameters: {}
+Parameters: 
 
-Mappings: {}
+Mappings: 
 
 Conditions: {}
 
