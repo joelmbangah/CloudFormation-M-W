@@ -8,28 +8,27 @@
         "ParameterValue": "true"
     },
     {
-        "ParameterKey": "DevWebserverSubnetAZPara",
+        "ParameterKey": "DevWebServerSubnetAZPara",
         "ParameterValue": "us-east-1a"
     },
     {
-        "ParameterKey": "DevWebserverSubnetCidrBlockPara",
+        "ParameterKey": "DevWebServerSubnetCidrBlockPara",
         "ParameterValue": "10.0.1.0/24"
     },
     {
-        "ParameterKey": "DevAppserverSubnetAZPara",
+        "ParameterKey": "DevAppServerSubnetAZPara",
         "ParameterValue": "us-east-1a"
     },
     {
-        "ParameterKey": "DevAppserverSubnetCidrBlockPara",
+        "ParameterKey": "DevAppServerSubnetCidrBlockPara",
         "ParameterValue": "10.0.2.0/24"
     },
     {
-        "ParameterKey": "DevDBserverSubnetAZPara",
+        "ParameterKey": "DevDBServerSubnetAZPara",
         "ParameterValue": "us-east-1a"
     },
     {
-        "ParameterKey": "DevDBserverSubnetCidrBlockPara",
+        "ParameterKey": "DevDBServerSubnetCidrBlockPara",
         "ParameterValue": "10.0.3.0/24"
     }
-    
 ]

@@ -17,7 +17,6 @@ Mappings:
        GoldenAMI: ami-0da7657fe73215c0c
     us-west-2:
        GoldenAMI: ami-08e2c1a8d17c2fe17
-   
 
 Conditions: {}
 
@@ -29,6 +28,9 @@ Resources:
       ImageId: !FindInMap [ DevWebserverGoldenAMImap, !Ref 'AWS::Region', GoldenAMI ]
       InstanceType: t2.micro
       Monitoring: true
+      SecurityGroupIds:
+        - !ImportValue DevWebserverSGID # Importing Web Server SG exported name
+      SubnetId: !ImportValue DevWebServerSubnetID # Importing Web Server subnet exported name
       UserData: !Base64 |
         #!/bin/bash
         sudo su
