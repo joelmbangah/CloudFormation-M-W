@@ -12,40 +12,33 @@ Parameters:
   DevVPCEnableDnsSupportPara:
     Description: Please enable Dns support (true/false)
     Type: String
-    Default: true
 
   # Web server subnet parameters
   DevWebServerSubnetAZPara:
     Description: Pease select an AZ for the Dev Web Server subnet
     Type: AWS::EC2::AvailabilityZone::Name
-    Default: us-east-1a
 
   DevWebServerSubnetCidrBlockPara:
     Description: Please provide the cidr block of your Dev Web server subnet 
     Type: String
-    Default: 10.0.1.0/24
   
   # App server subnet parameters
   DevAppServerSubnetAZPara:
     Description: Pease select an AZ for the Dev App Server subnet
     Type: AWS::EC2::AvailabilityZone::Name
-    Default: us-east-1a
 
   DevAppServerSubnetCidrBlockPara:
     Description: Please provide the cidr block of your Dev App server subnet 
     Type: String
-    Default: 10.0.2.0/24
   
   # DB server subnet parameters
   DevDBServerSubnetAZPara:
     Description: Pease select an AZ for the Dev DB Server subnet
     Type: AWS::EC2::AvailabilityZone::Name
-    Default: us-east-1a
 
   DevDBServerSubnetCidrBlockPara:
     Description: Please provide the cidr block of your Dev DB server subnet 
     Type: String
-    Default: 10.0.3.0/24
   
 Mappings: {}
 
@@ -61,7 +54,9 @@ Resources:
       Tags:
         - Key: Name
           Value: DevVPC
-        
+        - Key: Env
+          Value: Dev  
+          
   # WebServer subnet
   DevWebServerSubnet:
     Type: AWS::EC2::Subnet
@@ -95,15 +90,5 @@ Resources:
         - Key: Name
           Value: DevDBServerSubnet
   
-Outputs: 
-  DevVPCIDExportOutput:
-    Description: Exporting Dev VPC id
-    Value: !Ref DevVPC
-    Export:
-      Name: DevVPCID
+Outputs: {}
 
-  DevWebServerSubnetIDExportOutput:
-    Description: Exporting Dev Web subnet id
-    Value: !Ref DevWebServerSubnet
-    Export: 
-      Name: DevWebServerSubnetID   
