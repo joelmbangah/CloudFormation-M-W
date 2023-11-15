@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 
+
+Parameters: 
+
+Mappings: 
+
+Conditions: 
+
+Resources: 
+  # https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy
+  myVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: --.--.--.--/--
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      # dedicated | default | host
+      InstanceTenancy: default
+      Tags:
+        - Key: keyname
+          Value: value
+
+Outputs:
